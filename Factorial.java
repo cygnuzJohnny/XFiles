@@ -1,46 +1,41 @@
 package FactorialNumber;
 
-//Johnny Robinson
-//Factorial Table
-//APP Display a Table of Squares
-
+/*Johnny Robinson
+cygnuz007@hotmail.com
+Factorial Table
+APP Prompt User to Enter an Integer then Calculate the Factorial of a Number
+*/
 
 import java.util.Scanner;
-
 
 public class Factorial {
 
 	public static void main(String[] args) {
 
-		int n, c, fact = 1;
-		int value = 0;
+		Scanner sc = new Scanner(System.in);
+		String choice = "y";
+		int n;
+		int product;
+		System.out.println("Welcome to the Factorial Calculator!");
 
-		while (value <= 10) {
-
-			System.out.println("Welcome to the Factorial Calculator!");
-			System.out.println("Enter an integer tha's greater than 0 but less than 10");
-			Scanner sc = new Scanner(System.in);
+		do {
+			System.out.print("Enter an integer that's greater than 0 but less than 10:");
 			n = sc.nextInt();
+			product = fact(n);
+			System.out.println("The factorial of " + n);
+			System.out.println("is " + product);
+			System.out.print("Continue?(y/n): ");
+			choice = sc.next();
+		} while (choice.equals("y") || choice.equals("Y"));
+		//sc.close();
+	}
 
-			// if (n < 0) {
-			// System.out.println("Number should be non-negative.");
-			// } else
-
-			for (c = 1; c <= n; c++)
-				fact = fact * c;
-
-			System.out.println("Factorial of " + n + " is = " + fact);
-
-			// See if the user wants to continue
-			System.out.println("Continue? (y/n): ");
-			String Choice = sc.next();
-			System.out.println();
-			continue;
-		}
-
-		{
-		}
-		// while (choice.equalsIgnoreCase("y"))
+	public static int fact(int n) {
+		if (n == 1) {
+			return 1;
+		} else
+			return n * fact(n - 1);
+		
 	}
 	// TODO Auto-generated method stub
 }
