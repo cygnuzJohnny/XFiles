@@ -3,7 +3,7 @@ package SquaresCubes;
 //Johnny Robinson
 
 //Squares and Cubes Table
-//APP Prompt User to Enter Integer
+//APP Prompt User to Enter Integer to calculate table of squares and cubes
 
 import java.util.Scanner;
 
@@ -15,6 +15,7 @@ public class SquaresAndCubes {
 		System.out.println("Welcome to the Squares and Cubes table");
 		System.out.println();
 
+		// Create Scanner
 		Scanner sc = new Scanner(System.in);
 		String choice = "y";
 
@@ -46,6 +47,7 @@ public class SquaresAndCubes {
 			System.out.println();
 
 		} while (!choice.equalsIgnoreCase("n"));
+		sc.close(); // Close Scanner
 	}
 
 	// TODO Auto-generated method stub
