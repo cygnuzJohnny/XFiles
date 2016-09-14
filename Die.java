@@ -6,6 +6,7 @@ public class Die {
 	private int sides;
 	private int roll;
 
+	//Create constructor
 	public Die() {
 		sides = 0;
 		roll = 0;
@@ -24,4 +25,4 @@ public class Die {
 		return roll;
 
 	}
-}
+}//Close out class
