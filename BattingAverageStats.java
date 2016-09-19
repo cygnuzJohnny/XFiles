@@ -32,11 +32,14 @@ public class BattingAverageStats {
 	            atBatResult = scan.nextInt();
 	            totalScore +=atBatResult;
 	            inputs.add(atBatResult);
-		
-		
+				
 		// TODO Auto-generated method stub
 
 	}
 
+	        
+	        float battingAverage = (float) 3 / (float) timesAtBat;
+	        System.out.println("\nBatting Percentage: "+decimalFormat.format(battingAverage));
+	        
 }
 }
