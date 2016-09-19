@@ -1,45 +1,90 @@
 /*Johnny Robinson
 cygnuz007@hotmail.com
-
+APP Calculate batting statistics
 */
 
-
 import java.util.Scanner;
-import java.text.DecimalFormat;
-import java.util.ArrayList;
+
+
 
 public class BattingAverageStats {
-	
-	
+
 	public static void main(String[] args) {
 		
-		
-		 Scanner scan = new Scanner(System.in);
-	        DecimalFormat decimalFormat = new DecimalFormat("0.000");
-	        int timesAtBat;
-	        int atBatResult;
-	        int totalScore = 0;
-	        
-	        System.out.println("Welcome to Batting Average Calculator!");
-	        System.out.println("\n0=out, 1=single, 2=double, 3=triple, 4=home run");
-	        
-	        System.out.print("Enter number of times at bat: ");
-	        timesAtBat=scan.nextInt();
-	        
-	        ArrayList<Integer> inputs = new ArrayList<Integer>();
-	        for(int i=0; i< timesAtBat; i++) {
-	            System.out.print("Result for at-bat "+i+":"+"\t");
-	            atBatResult = scan.nextInt();
-	            totalScore +=atBatResult;
-	            inputs.add(atBatResult);
+		//Create Scanner
+		Scanner scan = new Scanner(System.in);
+
+		//Enter While Loop
+		while (true) {
+			
+			System.out.println("Welcome to Batting Average Calculator!");
+			System.out.print("Enter number of times at bat: ");
+			
+			//User input number at bat
+			int n = scan.nextInt();
+
+			//Create new int array
+			int[] atBats = new int[n];
+
+			System.out.println("0=out, 1=single, 2=double, 3=triple, 4=home run");
+			
+			//Enter for loop
+			for (int i = 0; i < n; i++) {
+				System.out.print("Result for at-bat " + i + ": ");
 				
-		// TODO Auto-generated method stub
+				//User input times at bat
+				atBats[i] = scan.nextInt();
+				
+				//Enter While Loop if invalid user input 
+				while (atBats[i] < 0 || atBats[i] > 4) {
+					System.out.print("Invalid entry.  Please try again.  Result for at-bat " + i + ": ");
+					atBats[i] = scan.nextInt();
 
-	}
+					// TODO Auto-generated method stub
 
-	        
-	        float battingAverage = (float) 3 / (float) timesAtBat;
-	        System.out.println("\nBatting Percentage: "+decimalFormat.format(battingAverage));
-	        
-}
-}
+				}//Close invalid (2nd) while loop 
+
+			}//Close for loop
+
+			//Declare and initialize int variables
+			int hits = 0;
+			int totalBases = 0;
+			for (int i : atBats) {
+				if (i > 0)
+					hits++;
+				totalBases += i;
+
+			}//Close for loop
+			
+			//Calculate batting average
+			double battingAvg = (double) hits / n;
+			double sluggingPct = (double) totalBases / n;
+
+			System.out.printf("Batting Average: %.3f \n", battingAvg);
+			System.out.printf("Slugging Percentage: %.3f \n", sluggingPct);
+
+			System.out.println("Another batter? (y/n):");
+			
+			// clear out newline left by nextDouble
+			scan.nextLine(); 
+			
+			//Create string variable name answer
+			String answer = scan.nextLine();
+			char firstLetter = answer.toUpperCase().charAt(0);
+			while (firstLetter != 'Y' && firstLetter != 'N') {
+				System.out.print("Invalid entry.  Please try again.  Continue? (y/n) ");
+				answer = scan.nextLine();
+				firstLetter = answer.toUpperCase().charAt(0);
+
+			}//Close invalid (3rd)  while loop
+
+			if (firstLetter == 'N')
+				break;
+
+		}//Close 1st while loop
+		
+		
+		scan.close();//Close Scanner
+		System.out.println("Thank you!");
+	}//Close main method
+}//Close class
