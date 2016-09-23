@@ -1,10 +1,9 @@
 /*Johnny Robinson
 cygnuz007@hotmail.com
-APP Calculate batting statistics
+APP will Calculate batting statistics
 */
 
 import java.util.Scanner;
-
 
 
 public class BattingAverageStats {
@@ -32,7 +31,7 @@ public class BattingAverageStats {
 			for (int i = 0; i < n; i++) {
 				System.out.print("Result for at-bat " + i + ": ");
 				
-				//User input times at bat
+				//User input number of times at bat
 				atBats[i] = scan.nextInt();
 				
 				//Enter While Loop if invalid user input 
