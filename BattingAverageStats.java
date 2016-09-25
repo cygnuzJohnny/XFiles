@@ -1,6 +1,6 @@
 /*Johnny Robinson
 cygnuz007@hotmail.com
-APP will Calculate batting statistics
+APP Calculate batting statistics
 */
 
 import java.util.Scanner;
