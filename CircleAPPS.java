@@ -1,6 +1,7 @@
 /*Johnny Robinson
  * cygnuz007@hotmail.com
-APP Calculate a circle's circumference and area */
+APP Calculate a circle circumference and area
+ */
 
 import java.util.Scanner;
 
@@ -28,7 +29,7 @@ public class CircleAPPS {
 			radius = sc.nextDouble();//Enter user input for radius
 			
 			
-			//Create object name circles
+			//Create Object name circles
 			Circles circles = new Circles(radius);
 
 			
@@ -39,15 +40,16 @@ public class CircleAPPS {
 			//Number of circles user built
 			count = circles.getObjectCount();
 			
-			System.out.println("would you like to create another Circle? (y/n): ");
-			choice = sc.next();//Ask user input
+			System.out.println("would you like to create another Circle? (y/n): ");//Ask user input
+			choice = sc.next();//Store user input
 		}
+		    //Print number of circles created
 			System.out.println("You created " + count + " Circles");
 			System.out.println("Goodbye!");
 
 			sc.close();//Close scanner
 
-		// TODO Auto-generated method stub
+		
 
 	}//Close main method
 
