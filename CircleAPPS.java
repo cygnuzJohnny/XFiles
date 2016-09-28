@@ -40,7 +40,8 @@ public class CircleAPPS {
 			//Number of circles user built
 			count = circles.getObjectCount();
 			
-			System.out.println("would you like to create another Circle? (y/n): ");//Ask user input
+			//Ask user input
+			System.out.println("would you like to create another Circle? (y/n): ");
 			choice = sc.next();//Store user input
 		}
 		    //Print number of circles created
